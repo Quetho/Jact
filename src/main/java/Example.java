@@ -8,7 +8,7 @@ public class Example {
 
 	@RequestMapping("/")
 	String home() {
-		return "<a href=\"http://google.com\">tst</a>";
+		return "<a href=\"http://google.com\">tstooooo</a>";
 	}
 	
 
