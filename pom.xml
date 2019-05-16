@@ -16,6 +16,11 @@
 	
 	<dependencies>
 		<dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>mssql-jdbc</artifactId>
+		    <version>6.4.0.jre8</version>
+		</dependency>
+		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
@@ -52,6 +57,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 	</dependencies>
 	
 	<properties>
@@ -65,29 +74,29 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
- <groupId>com.microsoft.azure</groupId>
- <artifactId>azure-webapp-maven-plugin</artifactId>
- <version>1.4.0</version>
- <configuration>
-   <deploymentType>jar</deploymentType>
-
-   <!-- configure app to run on port 80, required by App Service -->
-   <appSettings>
-     <property> 
-       <name>JAVA_OPTS</name> 
-       <value>-Dserver.port=80</value> 
-     </property> 
-   </appSettings>
-
-   <!-- Web App information -->
-   <resourceGroup>jact</resourceGroup>
-   <appName>jact</appName>
-   <region>westeurope</region>  
-
-   <!-- Java Runtime Stack for Web App on Linux-->
-   <linuxRuntime>jre8</linuxRuntime>
- </configuration>
-</plugin>
+			 <groupId>com.microsoft.azure</groupId>
+			 <artifactId>azure-webapp-maven-plugin</artifactId>
+			 <version>1.4.0</version>
+			 <configuration>
+			   <deploymentType>jar</deploymentType>
+			
+			   <!-- configure app to run on port 80, required by App Service -->
+			   <appSettings>
+			     <property> 
+			       <name>JAVA_OPTS</name> 
+			       <value>-Dserver.port=80</value> 
+			     </property> 
+			   </appSettings>
+			
+			   <!-- Web App information -->
+			   <resourceGroup>jact</resourceGroup>
+			   <appName>jact</appName>
+			   <region>westeurope</region>  
+			
+			   <!-- Java Runtime Stack for Web App on Linux-->
+			   <linuxRuntime>jre8</linuxRuntime>
+			 </configuration>
+			</plugin>
 		</plugins>
 	</build>
 

@@ -1,8 +1,9 @@
 var stompClient = null;
 
 function setConnected(connected) {
+	$("#connect").text("Connected");
     $("#connect").prop("disabled", connected);
-    $("#disconnect").prop("disabled", !connected);
+    //$("#disconnect").prop("disabled", !connected);
     if (connected) {
         $("#conversation").show();
     }
@@ -34,6 +35,10 @@ function disconnect() {
 
 function sendName() {
     stompClient.send("/app/hello", {}, JSON.stringify({'name': $("#name").val()}));
+    $("#name").val('');
+    $("#name").focus();
+    
+    
 }
 
 function showGreeting(message) {
